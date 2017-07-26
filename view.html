@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <title>Connect Four</title>
+
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="model.js"></script>
+        <script type="text/javascript" src="controller.js"></script>
+        <script>
+            $(document).ready( () => {
+                var game = new ConnectFourGame();
+                var controller = new Controller(game);
+                controller.playConnectFour();
+            } )
+        </script>
+    </head>
+    <body>
+        <h1 id="title">Connect Four</h1>
+        <table>
+            <tr>
+                <td>
+                    <table id="board">
+                        <tbody></tbody>
+                    </table>
+                </td>
+
+                <td>
+                    <div id="turn">Black Turn</div>
+                </td>
+
+                <td id="game-over">
+                    <h1>Game Over</h1>
+                    <h3 id="game-over-player"></h3>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    Num Columns: <input id="num-cols" type="text" value="7">
+                </td>
+                <td>
+                    Num Rows: <input id="num-rows" type="text" value="6">
+                </td>
+                <td>
+                    <input id="btnNewGame" class="btn btn-primary" type="button" value="New Game"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+

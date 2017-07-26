@@ -1,0 +1,57 @@
+body {
+    margin-left: 30px;
+}
+#turn {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+
+#board {
+    border: 2px solid black;
+    border-top: 0;
+    margin: 0 30px 30px 0;
+    border-collapse: collapse;
+    overflow: hidden;
+    z-index: 1;
+}
+#board tr {
+    height: 50px;
+    border-top: 1px solid lightgray;
+}
+#board td {
+    width: 50px;
+    border-right: 1px solid lightgray;
+    cursor: pointer;
+    position: relative;
+}
+#board td:hover::after {
+    background-color: #ffa;
+    content: '\00a0';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: -1; 
+}
+#board .red {
+    background-color: red;
+}
+#board .black {
+    background-color: black;
+}
+
+#board.game-over td {
+    opacity: .5;
+}
+#game-over {
+    padding-left: 30px;
+}
+
+#num-cols, #num-rows {
+    width: 40px;
+    margin-right: 30px;
+}
